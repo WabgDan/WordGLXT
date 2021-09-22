@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WordGLXTNew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WordGLXTNewDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ADOConn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dwxxb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Zdmlb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Zdxxb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Rizhib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Users.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="msword9.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WordGLXTNew.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WordGLXTNewDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ADOConn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dwxxb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Zdmlb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Zdxxb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Rizhib.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Users.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="msword9.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WordGLXTNew.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\WordGLXTNew.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\WordGLXT.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\WordGLXTNew.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Blue Glass Folders Icon 2.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Blue Glass Folders Icon 13.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Blue Glass Folders Icon 17.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Blue Glass Folders Icon 22.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\FLD302.ICO">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\FLD305.ICO">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\G2 Folder Blue.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\saikin_fol.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\up01.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\up02.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\WordGLXT.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\world图标.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\登录.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\关闭按钮变前.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\普通登录1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon3.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\icon2.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\备份数据.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\查看属性.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\单位档案.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\口令修改.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\浏览文档.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\日志管理.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\删除文档].ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\数据恢复.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\添加文档.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\退出系统.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\文档类别.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\修改文档.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\用户管理.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
