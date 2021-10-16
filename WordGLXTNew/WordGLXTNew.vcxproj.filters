@@ -54,6 +54,12 @@
     <ClInclude Include="msword9.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Dialogin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dwdandlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WordGLXTNew.cpp">
@@ -86,6 +92,12 @@
     <ClCompile Include="msword9.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Dialogin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dwdandlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WordGLXTNew.rc">
@@ -93,9 +105,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\WordGLXTNew.rc2">
-      <Filter>资源文件</Filter>
-    </None>
     <None Include="res\WordGLXT.rc2">
       <Filter>资源文件</Filter>
     </None>
@@ -204,6 +213,9 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="res\工具栏图标\用户管理.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\工具栏图标\bitmap1.bmp">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

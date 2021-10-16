@@ -4,6 +4,8 @@
 #include "Rizhib.h"
 #include "msword9.h"
 #include "ADOConn.h"
+#include "Users.h"
+#include "Dwdandlg.h"
 // WordGLXTNewDlg.h: 头文件
 //
 
@@ -12,6 +14,7 @@
 #endif // _MSC_VER > 1000
 
 extern CWordGLXTNewApp theApp;
+extern CUsers user;
 
 // CWordGLXTNewDlg 对话框
 class CWordGLXTNewDlg : public CDialogEx
@@ -75,6 +78,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
+	POINT Old;
 	HTREEITEM arrays[10], brrays[20], hitem[100];
 	HTREEITEM m_root, temp;
 	CDwxxb dwb;
@@ -83,8 +87,11 @@ private:
 	CRizhib zhi;
 	CImageList m_treeImageList;
 	CTime t;
-	CStatusBarCtrl m_StatusBar;
-	CString strWordpath;  //记录word路径
-	CString strText;     //暂存word文档的内容
+	CStatusBarCtrl m_StatusBar;   //statusBar object
+	CString strWordpath;  //Record word path
+	CString strText;     //staging the contents of a word document
 	void AddtoTree(HTREEITEM m_node);
+
+public:
+	afx_msg void OnSize(UINT nType, int cx, int cy);
 };

@@ -7,6 +7,7 @@
 #include "WordGLXTNew.h"
 #include "WordGLXTNewDlg.h"
 #include "afxdialogex.h"
+#include "Dialogin.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -101,6 +102,9 @@ BEGIN_MESSAGE_MAP(CWordGLXTNewDlg, CDialogEx)
 	ON_COMMAND(ID_Button_BackUp, OnButtonBackUp)
 	ON_COMMAND(ID_Button_Restore, OnButtonRestore)*/
 	ON_COMMAND(ID_System_Exit, OnSystemExit)
+	
+	
+	ON_WM_SIZE()
 END_MESSAGE_MAP()
 
 
@@ -109,7 +113,12 @@ END_MESSAGE_MAP()
 BOOL CWordGLXTNewDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
+	//The control size of the dialog box for setting the default
+	//company number in the company file changes with the window size
+	CRect rect;
+	GetClientRect(&rect); //Get size of customer area
+	Old.x = rect.right - rect.left;
+	Old.y = rect.bottom - rect.top;
 	// 将“关于...”菜单项添加到系统菜单中。
 
 	// IDM_ABOUTBOX 必须在系统命令范围内。
@@ -135,6 +144,11 @@ BOOL CWordGLXTNewDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// 设置大图标
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
+	Dialogin gin;
+
+	if (gin.DoModal() != IDOK)//启动登录对话框
+		OnOK();
+
 	// TODO: 在此添加额外的初始化代码
 	dwb.Load_dep();//批量加载单位表中的记录数据
 	mlb.Load_dep();//批量加载类别表中的记录数据
@@ -156,9 +170,9 @@ BOOL CWordGLXTNewDlg::OnInitDialog()
 	m_StatusBar.SetParts(4, &width[0]);
 	m_StatusBar.SetText("索尼精密", 0, 0);//显示单位名称
 
-	//CString StatusText;
-	//StatusText.Format("当前用户：%s", user.GetUsername());//显示当前用户
-	//m_StatusBar.SetText(StatusText, 0, 1);
+	CString StatusText;
+	StatusText.Format("当前用户：%s", user.GetUsername());//显示当前用户
+	m_StatusBar.SetText(StatusText, 0, 1);
 
 	t = CTime::GetCurrentTime();
 	CString strdate;
@@ -182,6 +196,39 @@ BOOL CWordGLXTNewDlg::OnInitDialog()
 	m_ImageList.Add(AfxGetApp()->LoadIcon(IDI_ICONSJKBF));      //备份
 	m_ImageList.Add(AfxGetApp()->LoadIcon(IDI_ICONSJKHF));      //恢复
 	m_ImageList.Add(AfxGetApp()->LoadIcon(IDI_ICONExit));    //退出系统
+
+	UINT array[16];
+	for (int i = 0; i < 16; i++)
+	{
+		if (i == 2 || i == 8 || i == 12)
+		{
+			array[i] = ID_SEPARATOR;//第三个和第九个按钮为分隔条
+		}
+		else  array[i] = i + 1101;
+	}
+
+	m_ToolBar.Create(this);
+	m_ToolBar.SetButtons(array, 16);
+	m_ToolBar.SetButtonText(0, "单位档案");
+	m_ToolBar.SetButtonText(1, "文档类别");
+	m_ToolBar.SetButtonText(3, "添加文档");
+	m_ToolBar.SetButtonText(4, "修改文档");
+	m_ToolBar.SetButtonText(5, "删除文档");
+	m_ToolBar.SetButtonText(6, "浏览文档");
+	m_ToolBar.SetButtonText(7, "查看属性");
+	m_ToolBar.SetButtonText(9, "用户管理");
+	m_ToolBar.SetButtonText(10, "口令修改");
+	m_ToolBar.SetButtonText(11, "日志管理");
+	m_ToolBar.SetButtonText(13, "备份数据");
+	m_ToolBar.SetButtonText(14, "恢复数据");
+	m_ToolBar.SetButtonText(15, "退出系统");
+	m_ToolBar.GetToolBarCtrl().SetImageList(&m_ImageList);//关联图像列表
+
+	m_ToolBar.SetSizes(CSize(50,50), CSize(25, 25));//设置按钮和按钮位图大小
+	m_ToolBar.EnableToolTips(true);  
+	RepositionBars(AFX_IDW_CONTROLBAR_FIRST, AFX_IDW_CONTROLBAR_LAST, 0);//show Toolbox
+	::GetCurrentDirectory(512, buf);//Obtain current path,which is used when backing up the database  
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -378,16 +425,16 @@ BOOL CWordGLXTNewDlg::OnToolTipNotify(UINT id, NMHDR* pNMHDR, LRESULT* pResult)
 void CWordGLXTNewDlg::OnMenudwdan() //基本信息-〉单位档案
 {
 	// TODO: Add your command handler code here
-	//CDwdandlg dlg;
-	//if (dlg.DoModal() == IDOK)
-	//{
-	//	m_tree.DeleteAllItems();
-	//	dwb.Load_dep();//批量加载单位表中的记录数据
-	//	mlb.Load_dep();//批量加载类别表中的记录数据
-	//	xxb.Load_dep();//批量加载文档表中的记录数据
-	//	m_root = m_tree.InsertItem("基本信息管理", 0, 0);
-	//	AddtoTree(m_root);
-	//}
+	Dwdandlg dlg;
+	if (dlg.DoModal() == IDOK)
+	{
+		m_tree.DeleteAllItems();
+		dwb.Load_dep();//批量加载单位表中的记录数据
+		mlb.Load_dep();//批量加载类别表中的记录数据
+		xxb.Load_dep();//批量加载文档表中的记录数据
+		m_root = m_tree.InsertItem("基本信息管理", 0, 0);
+		AddtoTree(m_root);
+	}
 }
 
 void CWordGLXTNewDlg::OnMenuwdlb() //基本信息-〉文档类别
@@ -512,4 +559,44 @@ void CWordGLXTNewDlg::OnSystemExit()
 {
 	// TODO: Add your command handler code here
 	//OnOK();
+}
+
+void CWordGLXTNewDlg::OnSize(UINT nType, int cx, int cy)
+{
+	CDialogEx::OnSize(nType, cx, cy);
+	
+	// TODO: 在此处添加消息处理程序代码
+	if (nType == SIZE_RESTORED || nType == SIZE_MAXIMIZED) //The size of the form has changed.processing program
+	{
+		float fsp[2];
+		POINT Newp; //获取现在对话框的大小
+		CRect recta;
+		GetClientRect(&recta);//size of the customer area
+		Newp.x = recta.right - recta.left;
+		Newp.y = recta.bottom - recta.top;
+		fsp[0] = (float)Newp.x / Old.x;
+		fsp[1] = (float)Newp.y / Old.y;
+		CRect Rect;
+		int woc;
+		CPoint OldTLPoint, TLPoint; //左上角
+		CPoint OldBRPoint, BRPoint; //右下角
+		HWND hwndChild = ::GetWindow(m_hWnd, GW_CHILD); //List all controls
+		while (hwndChild)
+		{
+			woc = ::GetDlgCtrlID(hwndChild); //Get ID
+			GetDlgItem(woc)->GetWindowRect(Rect);
+			ScreenToClient(Rect);
+			OldTLPoint = Rect.TopLeft();
+			TLPoint.x = long(OldTLPoint.x * fsp[0]);
+			TLPoint.y = long(OldTLPoint.y * fsp[1]);
+			OldBRPoint = Rect.BottomRight();
+			BRPoint.x = long(OldBRPoint.x * fsp[0]);
+			BRPoint.y = long(OldBRPoint.y * fsp[1]); //高度不可读的控件（如:combBox),不要改变此值.
+			Rect.SetRect(TLPoint, BRPoint);
+			GetDlgItem(woc)->MoveWindow(Rect, TRUE);
+			hwndChild = ::GetWindow(hwndChild, GW_HWNDNEXT);
+		}
+		Old = Newp;
+	}
+
 }

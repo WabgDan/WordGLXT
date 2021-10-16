@@ -187,6 +187,7 @@
   <ItemGroup>
     <ClInclude Include="ADOConn.h" />
     <ClInclude Include="Dialogin.h" />
+    <ClInclude Include="Dwdandlg.h" />
     <ClInclude Include="Dwxxb.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="msword9.h" />
@@ -203,6 +204,7 @@
   <ItemGroup>
     <ClCompile Include="ADOConn.cpp" />
     <ClCompile Include="Dialogin.cpp" />
+    <ClCompile Include="Dwdandlg.cpp" />
     <ClCompile Include="Dwxxb.cpp" />
     <ClCompile Include="msword9.cpp" />
     <ClCompile Include="pch.cpp">
@@ -223,7 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\WordGLXT.rc2" />
-    <None Include="res\WordGLXTNew.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\bitmap2.bmp" />
